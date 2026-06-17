@@ -1,3 +1,7 @@
+// Wrappa tutto con LocationProvider
+// Renderizza HomePage
+// Qui importi leaflet/dist/leaflet.css se non lo fai in MapView
+
 import { useState } from 'react'
 import './App.css'
 import 'leaflet/dist/leaflet.css'
@@ -5,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
 
 import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet'
+import { useGeolocation } from './features/location/useGeolocation'
 
 
 type LocationData = {
@@ -37,30 +42,8 @@ function App() {
     setIsLoading(true);
     setError(null);
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        async (position) => {
-          console.log("Latitude:", position.coords.latitude);
-          console.log("Longitude:", position.coords.longitude);
-
-          const res = await fetch(
-            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${position.coords.latitude}&lon=${position.coords.longitude}`, { headers: { 'Accept-language': 'en-US' } }
-          );
-
-          const data = await res.json();
-          console.log("Location:", data);
-          setLocation(data);
-          setIsLoading(false);
-        },
-        (error) => {
-          console.error("Error Code:", error.code, " - ", error.message);
-          setError("Failed to get location.");
-          setIsLoading(false);
-        }
-      );
-    } else {
-      console.error("Geolocation is not supported by this browser.");
-    }
+    const { coords, status, error } = useGeolocation();
+    console.log('Geolocation status:', status, 'coords:', coords, 'error:', error);
   }
 
   return (
