@@ -4,7 +4,7 @@
 // Espone: { coords, status, error }
 
 import type { Coords, Status } from '@/types'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 interface GeoLocationState {
     coords: Coords | null
@@ -14,15 +14,16 @@ interface GeoLocationState {
 }
 
 
-export function useGeolocation(): GeoLocationState {
+export function useGeolocation(): GeoLocationState & { start: () => void } {
     const [state, setState] = useState<GeoLocationState>({
         coords: null,
         status: 'idle',
         error: null,
-        errorCode: null
     })
 
-    useEffect(() => {
+    var start = useCallback(() => {
+        setState({ coords: null, status: 'loading', error: null })
+
         if (false) {
             // MOCK
             return;
@@ -33,19 +34,17 @@ export function useGeolocation(): GeoLocationState {
                 coords: null,
                 status: 'error',
                 error: 'Geolocation is not supported.',
-                errorCode: null
+                errorCode: null,
             });
             return;
         }
-
-        setState(prev => ({ ...prev, status: 'loading' }))
 
         const watchId = navigator.geolocation.watchPosition(
             (position) => {
                 setState({
                     coords: {
                         lat: position.coords.latitude,
-                        lng: position.coords.longitude,
+                        lon: position.coords.longitude,
                         accuracy: position.coords.accuracy
                     },
                     status: 'success',
@@ -75,5 +74,6 @@ export function useGeolocation(): GeoLocationState {
 
     }, [])
 
-    return state;
+    return { ...state, start };
 }
+
