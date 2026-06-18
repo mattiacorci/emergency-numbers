@@ -6,6 +6,11 @@
 @import "@fontsource-variable/geist";
 @import "@fontsource-variable/public-sans";
 
+@theme {
+  --container-center: true;
+  --container-padding: 1rem;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {

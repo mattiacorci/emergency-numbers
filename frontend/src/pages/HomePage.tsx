@@ -6,7 +6,7 @@
 //   EmergencyNumbers
 // Non contiene logica propria, solo struttura e spacing
 
-import { CoordinatesDisplay } from "@/features/location/CoordinatesDisplay";
+import { PlaceDisplay } from "@/features/location/PlaceDisplay";
 import { MapView } from "@/features/location/MapView";
 import { useGeolocation } from "@/features/location/useGeolocation";
 import { useReverseGeocode } from "@/features/location/useReverseGeocode";
@@ -14,8 +14,7 @@ import { Button } from "@/components/ui/button"
 import { useEffect } from "react";
 import { Spinner } from "@/components/ui/spinner";
 import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from "@/components/ui/empty";
-import { ArrowUpRightIcon } from "lucide-react";
-import { IconCompass, IconFolderCode } from "@tabler/icons-react"
+import { IconCompass } from "@tabler/icons-react"
 
 
 export function HomePage() {
@@ -61,10 +60,10 @@ export function HomePage() {
 
 
             {status === 'success' && coords && (
-                <>
-                    <CoordinatesDisplay coords={coords} />
+                <div className="flex flex-col gap-8">
+                    <PlaceDisplay coords={coords} place={place} />
                     <MapView coords={coords} />
-                </>
+                </div>
             )}
 
             {/* <EmergencyNumbers /> */}

@@ -15,14 +15,14 @@ export function MapView({ coords }: { coords: Coords }) {
     return (
         <div>
             {coords && (
-                <MapContainer center={[coords.lat, coords.lon]} zoom={15} scrollWheelZoom={false} style={{ width: '400px', height: '400px' }}>
+                <MapContainer center={[coords.lat, coords.lon]} zoom={16} scrollWheelZoom={false} style={{ width: '100%', height: '70vh' }}>
                     <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
                     <Marker position={[coords.lat, coords.lon]}>
                         <Popup>
-                            A pretty CSS3 popup. <br /> Easily customizable.
+                            You are here: {coords.lat.toFixed(4)}, {coords.lon.toFixed(4)}
                         </Popup>
                     </Marker>
                 </MapContainer>
