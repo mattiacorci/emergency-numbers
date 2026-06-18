@@ -12,4 +12,4 @@ class EmergencyRegionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = EmergencyRegion
-        fields = ['iso_code', 'country_name', 'status', 'valid_until', 'last_verified', 'source_url', 'numbers']
+        fields = ['iso_code', 'name', 'status', 'valid_until', 'last_verified', 'source_url', 'numbers']
