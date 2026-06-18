@@ -1,0 +1,8 @@
+{
+  "python.analysis.typeCheckingMode": "strict",
+  "python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv/Scripts/python.exe",
+  "editor.formatOnSave": true,
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff-linter"
+  }
+}
