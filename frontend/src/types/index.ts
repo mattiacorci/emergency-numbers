@@ -1,6 +1,7 @@
+export * from './emergency.types'
+
 export type Coords = { lat: number; lon: number; accuracy: number }
 export type Status = 'idle' | 'loading' | 'success' | 'error'
-export type EmergencyNumber = { id: string; name: string; number: string; category: string }
 
 export interface NominatimAddress {
   house_number?: string

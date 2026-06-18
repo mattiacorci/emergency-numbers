@@ -15,15 +15,18 @@ import { useEffect } from "react";
 import { Spinner } from "@/components/ui/spinner";
 import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from "@/components/ui/empty";
 import { IconCompass } from "@tabler/icons-react"
+import { EmergencyNumbers } from "@/features/emergency/EmergencyNumbers";
 
 
 export function HomePage() {
     const { coords, status, error, start } = useGeolocation();
     const place = useReverseGeocode(coords);
 
+    const countryCode = place?.address?.["ISO3166-2-lvl6"];
+
     useEffect(() => {
-        console.log(place)
-    }, [place]);
+        console.log("HomePage countryCode:", countryCode);
+    }, [countryCode]);
 
     return (
         <div>
@@ -63,6 +66,9 @@ export function HomePage() {
                 <div className="flex flex-col gap-8">
                     <PlaceDisplay coords={coords} place={place} />
                     <MapView coords={coords} />
+                    {countryCode && (
+                        <EmergencyNumbers countryCode={countryCode} />
+                    )}
                 </div>
             )}
 

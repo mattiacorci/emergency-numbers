@@ -24,7 +24,7 @@ class EmergencyResolver:
         except EmergencyRegion.DoesNotExist:
             return None
         
-        if region.valid_until and region.valid_until < data.today():
+        if region.valid_until and region.valid_until < date.today():
             return None
         
         return region;

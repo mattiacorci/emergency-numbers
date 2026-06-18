@@ -16,6 +16,7 @@ export function PlaceDisplay({ coords, place }: { coords: Coords; place: Nominat
           <p><strong>Longitude:</strong> {coords?.lon.toFixed(4)}</p>
           <p><strong>Accuracy:</strong> {coords?.accuracy} meters</p>
           <p><strong>Address:</strong> {place?.display_name}</p>
+          <p><strong>ISO 3166-2:</strong> {place?.address["ISO3166-2-lvl6"]}</p>
         </div>
       )}
     </div>
