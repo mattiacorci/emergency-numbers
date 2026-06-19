@@ -2,13 +2,12 @@ import type { Coords, NominatimResponse } from "@/types";
 import { useEffect, useState } from "react";
 
 export function useReverseGeocode(coords: Coords | null) {
-    const [place, setPlace] = useState<NominatimResponse | null>(null);
+  const [place, setPlace] = useState<NominatimResponse | null>(null);
 
-    useEffect(() => {
-        if (!coords) {
-            setPlace(null);
-            return;
-        }
+  useEffect(() => {
+    if (!coords) {
+      return;
+    }
 
     fetch(`https://nominatim.openstreetmap.org/reverse?lat=${coords.lat}&lon=${coords.lon}&format=json`)
       .then(res => res.json())
@@ -18,7 +17,7 @@ export function useReverseGeocode(coords: Coords | null) {
         setPlace(null);
       });
 
-    }, [coords]);
+  }, [coords]);
 
-    return place;
+  return place;
 }
