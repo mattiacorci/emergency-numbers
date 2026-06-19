@@ -3,7 +3,6 @@
 // Renderizza lista di EmergencyCard
 // Gestisce stato loading/error/empty con StatusBanner
 
-import { useEffect } from "react";
 import { EmergencyCard } from "./EmergencyCard";
 import { useEmergencyRegion } from "./useEmergencyRegion";
 

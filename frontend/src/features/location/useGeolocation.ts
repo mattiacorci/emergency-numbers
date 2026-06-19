@@ -24,7 +24,7 @@ export function useGeolocation(): GeoLocationState & { start: () => void } {
     const [watchId, setWatchId] = useState<number | null>(null);
 
 
-    var start = useCallback(() => {
+    const start = useCallback(() => {
         setState({ coords: null, status: 'loading', error: null })
 
 

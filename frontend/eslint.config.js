@@ -34,4 +34,10 @@ export default defineConfig([
       'no-var': 'error',
     },
   },
+  {
+    files: ['src/components/ui/**'],
+    rules: {
+      'react-refresh/only-export-components': 'off',
+    }
+  }
 ])
