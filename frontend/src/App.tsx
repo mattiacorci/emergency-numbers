@@ -10,7 +10,7 @@ import { HomePage } from './pages/HomePage'
 
 function App() {
   return (
-    <div class="container mx-auto px-8 py-8">
+    <div className="container mx-auto px-8 py-8">
       <HomePage />
     </div>
   )
