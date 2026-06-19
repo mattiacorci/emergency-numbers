@@ -27,10 +27,6 @@ export function useGeolocation(): GeoLocationState & { start: () => void } {
     var start = useCallback(() => {
         setState({ coords: null, status: 'loading', error: null })
 
-        if (false) {
-            // MOCK
-            return;
-        }
 
         if (!navigator.geolocation) {
             setState({

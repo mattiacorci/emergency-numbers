@@ -11,9 +11,6 @@ export function EmergencyNumbers({ countryCode }: { countryCode: string }) {
 
     const emergencyRegion = useEmergencyRegion(countryCode);
 
-    useEffect(() => {
-        console.log("Emergency numbers for country code:", countryCode, emergencyRegion);
-    }, [countryCode, emergencyRegion]);
     return (
         <div>
             <h2 className="text-2xl font-bold mb-4">Emergency Numbers</h2>

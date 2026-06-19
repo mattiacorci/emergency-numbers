@@ -11,7 +11,6 @@ import { MapView } from "@/features/location/MapView";
 import { useGeolocation } from "@/features/location/useGeolocation";
 import { useReverseGeocode } from "@/features/location/useReverseGeocode";
 import { Button } from "@/components/ui/button"
-import { useEffect } from "react";
 import { Spinner } from "@/components/ui/spinner";
 import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from "@/components/ui/empty";
 import { IconCompass } from "@tabler/icons-react"
@@ -19,14 +18,10 @@ import { EmergencyNumbers } from "@/features/emergency/EmergencyNumbers";
 
 
 export function HomePage() {
-    const { coords, status, error, start } = useGeolocation();
+    const { coords, status, start } = useGeolocation();
     const place = useReverseGeocode(coords);
 
     const countryCode = place?.address?.["ISO3166-2-lvl6"];
-
-    useEffect(() => {
-        console.log("HomePage countryCode:", countryCode);
-    }, [countryCode]);
 
     return (
         <div>

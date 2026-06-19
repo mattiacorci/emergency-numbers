@@ -10,23 +10,21 @@ import { API_BASE_URL } from '@/config/api';
 
 
 export function useEmergencyRegion(countryCode: string): EmergencyRegion | undefined {
-    const [emergencyRegion, setEmergencyRegion] = useState<EmergencyRegion>();
+  const [emergencyRegion, setEmergencyRegion] = useState<EmergencyRegion>();
 
-    useEffect(() => {
-        if (!countryCode) {
-            setEmergencyRegion([]);
-            return;
-        }
-        fetch(`${API_BASE_URL}/api/emergency-numbers/${countryCode}/`)
-            .then(res => res.json())
-            .then(data => setEmergencyRegion(toEmergencyRegion(data)))
-            .catch(err => {
-                console.error("Error fetching emergency numbers:", err);
-                setEmergencyRegion([]);
-            });
-    }, [countryCode]);
+  useEffect(() => {
+    if (!countryCode) {
+      return;
+    }
+    fetch(`${API_BASE_URL}/api/emergency-numbers/${countryCode}/`)
+      .then(res => res.json())
+      .then(data => setEmergencyRegion(toEmergencyRegion(data)))
+      .catch(err => {
+        console.error("Error fetching emergency numbers:", err);
+      });
+  }, [countryCode]);
 
-    return emergencyRegion;
+  return emergencyRegion;
 }
 
 function parseDateOnly(s: string): Date {
@@ -37,7 +35,7 @@ function parseDateOnly(s: string): Date {
 function toEmergencyRegion(dto: EmergencyRegionDTO): EmergencyRegion {
   return {
     ...dto,
-    valid_until:   dto.valid_until ? parseDateOnly(dto.valid_until) : null,
+    valid_until: dto.valid_until ? parseDateOnly(dto.valid_until) : null,
     last_verified: parseDateOnly(dto.last_verified),
   };
 }
