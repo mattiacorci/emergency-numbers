@@ -19,7 +19,10 @@ export function useGeolocation(): GeoLocationState & { start: () => void } {
         coords: null,
         status: 'idle',
         error: null,
-    })
+    });
+
+    const [watchId, setWatchId] = useState<number | null>(null);
+
 
     var start = useCallback(() => {
         setState({ coords: null, status: 'loading', error: null })
@@ -70,9 +73,16 @@ export function useGeolocation(): GeoLocationState & { start: () => void } {
         }
         );
 
-        return () => navigator.geolocation.clearWatch(watchId);
-
+        setWatchId(watchId);
     }, [])
+
+    useEffect(() => {
+        return () => {
+            if (watchId !== null) {
+                navigator.geolocation.clearWatch(watchId);
+            }
+        }
+    }, [watchId])
 
     return { ...state, start };
 }
