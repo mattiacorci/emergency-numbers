@@ -5,7 +5,7 @@ import { useGeolocation } from './useGeolocation'
 
 const mockGeolocation = {
     watchPosition: vi.fn(),
-    clearWatch: vi.fn()
+    clearWatch: vi.fn(),
 }
 
 beforeEach(() => {
