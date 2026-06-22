@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             name='EmergencyRegion',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('iso_code', models.CharField(db_index=True, max_length=2, unique=True)),
+                ('iso_code', models.CharField(db_index=True, max_length=6, unique=True)),
                 ('country_name', models.CharField(max_length=100)),
                 ('status', models.CharField(choices=[('active', 'Active'), ('transitioning', 'Transitioning'), ('planned', 'Planned')], max_length=20)),
                 ('valid_until', models.DateField(blank=True, null=True)),

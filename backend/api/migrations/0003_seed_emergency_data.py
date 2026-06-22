@@ -3,8 +3,9 @@
 from datetime import date
 
 from django.db import migrations
+from django.db.migrations.state import StateApps
 
-def seed_data(apps, schema_editor):
+def seed_data(apps: StateApps, schema_editor) -> None:
     EmergencyRegion = apps.get_model('api', 'EmergencyRegion')
     EmergencyNumber = apps.get_model('api', 'EmergencyNumber')
 
@@ -73,7 +74,7 @@ def seed_data(apps, schema_editor):
         ])
 
 
-def unseed_data(apps, schema_editor):
+def unseed_data(apps: StateApps, schema_editor) -> None:
     EmergencyRegion = apps.get_model('api', 'EmergencyRegion')
     EmergencyRegion.objects.filter(iso_code__startswith='IT').delete()
 
