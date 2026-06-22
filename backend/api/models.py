@@ -5,7 +5,7 @@ class EmergencyRegion(models.Model):
 
     """ Definisco la regione geografica a cui si riferiscono i numeri di emergenza, es. "Italy", "United States", "Europe", etc., ma anche Italy > Verona, Italy > Veneto, ecc"""
 
-    iso_code = models.CharField(max_length=2, unique=True, db_index=True)  # ISO 3166-1 alpha-2 code
+    iso_code = models.CharField(max_length=6, unique=True, db_index=True)  # ISO 3166-1 alpha-2 code
     name = models.CharField(max_length=100)
 
     parent = models.ForeignKey(
