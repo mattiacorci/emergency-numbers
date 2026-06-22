@@ -3,9 +3,10 @@
 from datetime import date
 
 from django.db import migrations
+from django.db.backends.base.schema import BaseDatabaseSchemaEditor
 from django.db.migrations.state import StateApps
 
-def seed_data(apps: StateApps, schema_editor) -> None:
+def seed_data(apps: StateApps, schema_editor: BaseDatabaseSchemaEditor) -> None:
     EmergencyRegion = apps.get_model('api', 'EmergencyRegion')
     EmergencyNumber = apps.get_model('api', 'EmergencyNumber')
 
