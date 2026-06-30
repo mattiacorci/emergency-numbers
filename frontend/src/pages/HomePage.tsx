@@ -27,45 +27,57 @@ export function HomePage() {
         <div>
             {/* <StatusBanner /> */}
 
-            {(status === 'idle' || status === 'loading') && (
+            {(status === 'idle') && (
                 <Empty>
                     <EmptyHeader>
-                        <EmptyMedia variant="icon">
-                            <IconCompass size={48} />
-                        </EmptyMedia>
-                        <EmptyTitle>No position yet</EmptyTitle>
+                        <EmptyTitle>Start by taking a deep breath</EmptyTitle>
                         <EmptyDescription>
-                            In order to get information about your current position, you need to allow the browser to access your location.
+                            Now, let me see your location.
                         </EmptyDescription>
                     </EmptyHeader>
                     <EmptyContent className="flex-row justify-center gap-2">
-                        {status === 'idle' && (
-                            <Button size="lg" onClick={start}>
-                                Get Current Location
-                            </Button>
-                        )}
-
-                        {status === 'loading' && (
-                            <Button size="lg" disabled>
-                                <Spinner data-icon="inline-start" />
-                                Getting location...
-                            </Button>
-                        )}
+                        <Button size="lg" onClick={start} className="w-full">
+                            Get Current Location
+                        </Button>
                     </EmptyContent>
                 </Empty>
 
             )}
 
-
-            {status === 'success' && coords && (
-                <div className="flex flex-col gap-8">
-                    <PlaceDisplay coords={coords} place={place} />
-                    <MapView coords={coords} />
-                    {countryCode && (
-                        <EmergencyNumbers countryCode={countryCode} />
-                    )}
+            {status === 'loading' && (
+                <div className="flex w-full min-w-0 flex-1 flex-col gap-8">
+                    <h1 className="text-5xl/normal lg:text-6xl/normal font-medium">Looking for you...</h1>
+                    <div className="flex flex-col lg:flex-row gap-12">
+                        <div className="w-full lg:w-1/2">
+                            <div className="w-full aspect-square bg-neutral-200 rounded-3xl flex items-center justify-center">
+                                <div className="w-8 h-8 border-4 border-neutral-300 border-t-neutral-500 rounded-full animate-spin-map"></div>
+                            </div>
+                        </div>
+                        <div className="w-full lg:w-1/2">
+                            <h2 className="text-3xl/normal font-medium">Wait a few seconds...</h2>
+                        </div>
+                    </div>
                 </div>
             )}
+
+            {status === 'success' && coords && (
+                <div className="flex w-full min-w-0 flex-1 flex-col gap-8">
+                    <h1 className="text-5xl/normal lg:text-6xl/normal font-medium">Ok, found you</h1>
+                    <div className="flex flex-col lg:flex-row gap-12">
+                        <div className="w-full lg:w-1/2 rounded-3xl">
+                            <MapView coords={coords} />
+                        </div>
+                        <div className="w-full lg:w-1/2">
+                            <h2 className="text-3xl/normal font-medium">Wait a few seconds...</h2>
+                            <PlaceDisplay coords={coords} place={place} />
+                            {countryCode && (
+                                <EmergencyNumbers countryCode={countryCode} />
+                            )}
+                        </div>
+                    </div>
+                </div>
+            )}
+
 
             {/* <EmergencyNumbers /> */}
         </div>
