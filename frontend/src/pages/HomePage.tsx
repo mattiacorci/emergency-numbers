@@ -11,9 +11,7 @@ import { MapView } from "@/features/location/MapView";
 import { useGeolocation } from "@/features/location/useGeolocation";
 import { useReverseGeocode } from "@/features/location/useReverseGeocode";
 import { Button } from "@/components/ui/button"
-import { Spinner } from "@/components/ui/spinner";
-import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from "@/components/ui/empty";
-import { IconCompass } from "@tabler/icons-react"
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyTitle } from "@/components/ui/empty";
 import { EmergencyNumbers } from "@/features/emergency/EmergencyNumbers";
 
 
