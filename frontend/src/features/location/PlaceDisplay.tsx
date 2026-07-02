@@ -7,10 +7,10 @@ import { useEffect } from "react";
 
 export function PlaceDisplay({ coords, place }: { coords: Coords; place: NominatimResponse | null }) {
 
-  useEffect(() => {
-    console.log("PlaceDisplay coords:", coords);
-    console.log("PlaceDisplay place:", place);
-  }, [coords, place]);
+  // useEffect(() => {
+  //   console.log("PlaceDisplay coords:", coords);
+  //   console.log("PlaceDisplay place:", place);
+  // }, [coords, place]);
 
   return (
     <div>
