@@ -14,15 +14,19 @@ interface GeoLocationState {
 }
 
 
-export function useGeolocation(): GeoLocationState & { start: () => void } {
+export function useGeolocation(): GeoLocationState & { start: () => void, reset: () => void } {
     const [state, setState] = useState<GeoLocationState>({
         coords: null,
         status: 'idle',
-        error: null,
+        error: null
     });
 
     const [watchId, setWatchId] = useState<number | null>(null);
 
+
+    const reset = useCallback(() => {
+        setState({ coords: null, status: 'idle', error: null })
+    }, []);
 
     const start = useCallback(() => {
         setState({ coords: null, status: 'loading', error: null })
@@ -80,6 +84,6 @@ export function useGeolocation(): GeoLocationState & { start: () => void } {
         }
     }, [watchId])
 
-    return { ...state, start };
+    return { ...state, start, reset };
 }
 

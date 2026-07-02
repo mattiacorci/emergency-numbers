@@ -9,6 +9,8 @@ import { useEmergencyRegion } from "./useEmergencyRegion";
 export function EmergencyNumbers({ countryCode }: { countryCode: string }) {
 
     const emergencyRegion = useEmergencyRegion(countryCode);
+    const primaryNumber = emergencyRegion?.numbers.find(num => num.is_primary);
+    const secondaryNumbers = emergencyRegion?.numbers.filter(num => !num.is_primary);
 
     return (
         <div>
@@ -16,14 +18,19 @@ export function EmergencyNumbers({ countryCode }: { countryCode: string }) {
             {emergencyRegion?.numbers.length === 0 && (
                 <p>No emergency numbers found for this region.</p>
             )}
+            <div className="flex flex-col gap-4">
+                {primaryNumber && (
+                    <EmergencyCard number={primaryNumber} className="w-full mb-4" />
+                )}
 
-            {emergencyRegion && emergencyRegion.numbers.length > 0 && (
-                <div className="grid gap-4">
-                    {emergencyRegion.numbers.map((num, idx) => (
-                        <EmergencyCard key={idx} number={num} />
-                    ))}
-                </div>
-            )}
+                {secondaryNumbers && secondaryNumbers.length > 0 && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        {secondaryNumbers?.map((num, idx) => (
+                            <EmergencyCard key={idx} number={num} />
+                        ))}
+                    </div>
+                )}
+            </div>
         </div>
     )
 }

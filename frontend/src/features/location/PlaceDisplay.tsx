@@ -3,18 +3,25 @@
 // Usa Card di shadcn
 
 import type { Coords, NominatimResponse } from "@/types";
+import { useEffect } from "react";
 
 export function PlaceDisplay({ coords, place }: { coords: Coords; place: NominatimResponse | null }) {
+
+  useEffect(() => {
+    console.log("PlaceDisplay coords:", coords);
+    console.log("PlaceDisplay place:", place);
+  }, [coords, place]);
 
   return (
     <div>
       {coords && (
-        <div className="p-8 border rounded shadow">
-          <p><strong>Latitude:</strong> {coords?.lat.toFixed(4)}</p>
-          <p><strong>Longitude:</strong> {coords?.lon.toFixed(4)}</p>
-          <p><strong>Accuracy:</strong> {coords?.accuracy} meters</p>
-          <p><strong>Address:</strong> {place?.display_name}</p>
-          <p><strong>ISO 3166-2:</strong> {place?.address["ISO3166-2-lvl6"]}</p>
+        <div className="flex flex-col gap-2">
+          <h2 className="text-3xl/normal font-medium">You are in {place?.display_name}</h2>
+          <div className="text-xl font-medium text-neutral-600">
+            Latitude: {coords?.lat.toFixed(4)}<br />
+            Longitude: {coords?.lon.toFixed(4)}<br />
+            Accuracy: {coords?.accuracy} meters
+          </div>
         </div>
       )}
     </div>
