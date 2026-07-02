@@ -3,14 +3,8 @@
 // Usa Card di shadcn
 
 import type { Coords, NominatimResponse } from "@/types";
-import { useEffect } from "react";
 
 export function PlaceDisplay({ coords, place }: { coords: Coords; place: NominatimResponse | null }) {
-
-  // useEffect(() => {
-  //   console.log("PlaceDisplay coords:", coords);
-  //   console.log("PlaceDisplay place:", place);
-  // }, [coords, place]);
 
   return (
     <div>
