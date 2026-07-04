@@ -23,7 +23,7 @@ export function HomePage() {
     const countryCode = place?.address?.["ISO3166-2-lvl6"] || place?.address?.["ISO3166-2-lvl4"];
 
     return (
-        <div className="max-w-2xl mx-auto flex flex-col gap-8 p-4">
+        <div className="max-w-2xl mx-auto flex flex-col gap-8 py-4">
             {/* <StatusBanner /> */}
 
             {(status === 'idle' || status === 'loading') && (
