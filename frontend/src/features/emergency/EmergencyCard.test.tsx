@@ -9,7 +9,7 @@ vi.mock('@/hooks/use-mobile', () => ({
 }))
 
 describe('EmergencyCard', () => {
-    it('mostra label e numero', () => {
+    it('Should display the label and number', () => {
         const number: EmergencyNumber = {
             label: 'Emergenza sanitaria',
             number: '112',
@@ -23,7 +23,37 @@ describe('EmergencyCard', () => {
         expect(screen.getByText('112')).toBeInTheDocument()
     })
 
-    it('apre il drawer e mostra il contenuto quando clicchi', async () => {
+    it('Should change color based on number type', () => {
+
+        for (const type of ['medical', 'police', 'fire'] as const) {
+            const number: EmergencyNumber = {
+                label: 'Foo emergency number ' + type,
+                number: '112',
+                is_primary: false,
+                number_type: type,
+            }
+
+            render(<EmergencyCard number={number} />);
+            expect(screen.getByRole('button', { name: new RegExp(`Foo emergency number ${type}`, 'i') })).toHaveClass(`bg-${type}`);
+        }
+    })
+
+    it('Should have a primary number badge if is_primary is true', () => {
+        const number: EmergencyNumber = {
+            label: 'Foo emergency number',
+            number: '112',
+            is_primary: true,
+            number_type: 'general',
+        }
+
+        render(<EmergencyCard number={number} />)
+
+        expect(screen.getByRole('button', { name: /Foo emergency number/i })).toHaveClass('bg-brand');
+    });
+
+
+
+    it('Should open the drawer and show the content when clicked', async () => {
         const user = userEvent.setup()
         const number: EmergencyNumber = {
             label: 'Polizia',

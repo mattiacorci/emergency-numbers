@@ -60,7 +60,7 @@ export function EmergencyCard({ number, className }: { number: EmergencyNumber, 
 
 
           <DrawerFooter>
-            <HoldToConfirmButton label={"Call " + number.number} holdDurationMs={3000} onConfirm={() => alert("Action confirmed!")} holdingLabel="Hold for 3 seconds">
+            <HoldToConfirmButton label={"Call " + number.number} holdDurationMs={3000} onConfirm={() => window.open(`tel:0123456789${number.number}`, "_blank", "noopener,noreferrer")} holdingLabel="Hold for 3 seconds">
             </HoldToConfirmButton>
             <DrawerClose render={<Button size="lg" variant="outline" />}>Cancel</DrawerClose>
           </DrawerFooter>

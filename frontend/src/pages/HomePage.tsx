@@ -23,31 +23,38 @@ export function HomePage() {
     const countryCode = place?.address?.["ISO3166-2-lvl6"] || place?.address?.["ISO3166-2-lvl4"];
 
     return (
-        <div>
+        <div className="max-w-2xl mx-auto flex flex-col gap-8 p-4">
             {/* <StatusBanner /> */}
 
             {(status === 'idle' || status === 'loading') && (
-                <Empty>
-                    <EmptyHeader>
-                        <EmptyTitle>Start by taking a deep breath</EmptyTitle>
-                        <EmptyDescription>
-                            Now, let me see your location.
-                        </EmptyDescription>
-                    </EmptyHeader>
-                    <EmptyContent className="flex-row justify-center gap-2">
-                        {status === 'idle' && (
-                            <Button size="lg" onClick={start} className="w-full">
-                                Get Current Location
-                            </Button>
-                        )}
-                        {status === 'loading' && (
-                            <Button size="lg" disabled className="w-full">
-                                <Spinner data-icon="inline-start" />
-                                Getting Current Location...
-                            </Button>
-                        )}
-                    </EmptyContent>
-                </Empty>
+                <div className="flex flex-col gap-12">
+                    <Empty>
+                        <EmptyHeader>
+                            <EmptyTitle>Start by taking a deep breath</EmptyTitle>
+                            <EmptyDescription>
+                                Now, let me see your location.
+                            </EmptyDescription>
+                        </EmptyHeader>
+                        <EmptyContent className="flex-row justify-center gap-2">
+                            {status === 'idle' && (
+                                <Button size="lg" onClick={start} className="w-full">
+                                    Get Current Location
+                                </Button>
+                            )}
+                            {status === 'loading' && (
+                                <Button size="lg" disabled className="w-full">
+                                    <Spinner data-icon="inline-start" />
+                                    Getting Current Location...
+                                </Button>
+                            )}
+                        </EmptyContent>
+                    </Empty>
+                    <div className="flex flex-col gap-4">
+                        <p className="text-sm text-neutral-600">By clicking the button, you will be asked to share your location. We will only use this information to provide you with relevant emergency information.</p>
+                        <p className="text-sm text-neutral-600">This app is a personal project and the author of this app declines any responsibility for the accuracy of the information provided and any reliance on such information.</p>
+                        <p className="text-sm font-semibold text-neutral-600">Be aware that if you call an emergency number without a valid reason, you may be charged by the authority.</p>
+                    </div>
+                </div>
 
             )}
 
