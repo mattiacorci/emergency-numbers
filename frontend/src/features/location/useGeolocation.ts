@@ -5,6 +5,7 @@
 
 import type { Coords, Status } from '@/types'
 import { useCallback, useEffect, useState } from 'react'
+import { MOCK_COORDS_MILANO, MOCK_COORDS_NEW_YORK } from './mocks/coords'
 
 interface GeoLocationState {
     coords: Coords | null
@@ -15,6 +16,8 @@ interface GeoLocationState {
 
 
 export function useGeolocation(): GeoLocationState & { start: () => void, reset: () => void } {
+
+    const SIMULATE_GEOLOCATION = true; // Set to true to simulate geolocation for testing
     const [state, setState] = useState<GeoLocationState>({
         coords: null,
         status: 'idle',
@@ -44,6 +47,22 @@ export function useGeolocation(): GeoLocationState & { start: () => void, reset:
 
         const watchId = navigator.geolocation.watchPosition(
             (position) => {
+                if (SIMULATE_GEOLOCATION) {
+                    const MOCK_COORDS = MOCK_COORDS_NEW_YORK; // Puoi cambiare con MOCK_COORDS_NEW_YORK o MOCK_COORDS_NAPOLI per testare altre coordinate
+                    setState({
+                        coords: {
+
+                            lat: MOCK_COORDS.lat,
+                            lon: MOCK_COORDS.lon,
+                            accuracy: MOCK_COORDS.accuracy
+                        },
+                        status: 'success',
+                        error: null,
+                        errorCode: null
+                    });
+
+                    return;
+                }
                 setState({
                     coords: {
                         lat: position.coords.latitude,

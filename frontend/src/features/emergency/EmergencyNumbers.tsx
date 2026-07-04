@@ -15,7 +15,7 @@ export function EmergencyNumbers({ countryCode }: { countryCode: string }) {
     return (
         <div>
             <h2 className="text-2xl font-bold mb-4">Emergency Numbers</h2>
-            {emergencyRegion?.numbers.length === 0 && (
+            {(!emergencyRegion || emergencyRegion?.numbers.length === 0) && (
                 <p>No emergency numbers found for this region.</p>
             )}
             <div className="flex flex-col gap-4">

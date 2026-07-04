@@ -20,7 +20,7 @@ export function HomePage() {
     const { coords, status, start, reset } = useGeolocation();
     const place = useReverseGeocode(coords);
 
-    const countryCode = place?.address?.["ISO3166-2-lvl6"];
+    const countryCode = place?.address?.["ISO3166-2-lvl6"] || place?.address?.["ISO3166-2-lvl4"];
 
     return (
         <div>
@@ -74,7 +74,7 @@ export function HomePage() {
                         <div className="w-full lg:w-1/2 rounded-3xl">
                             <MapView coords={coords} />
                         </div>
-                        <div className="w-full lg:w-1/2">
+                        <div className="w-full lg:w-1/2 flex flex-col gap-8">
                             <PlaceDisplay coords={coords} place={place} />
                             {countryCode && (
                                 <EmergencyNumbers countryCode={countryCode} />
