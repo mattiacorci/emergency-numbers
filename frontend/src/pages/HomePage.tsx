@@ -83,8 +83,6 @@ export function HomePage() {
                     </div>
                 </div>
             )}
-
-
             {/* <EmergencyNumbers /> */}
         </div>
     )

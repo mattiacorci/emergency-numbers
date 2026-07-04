@@ -1,7 +1,6 @@
 // Props: { coords: Coords }
 // Mostra lat, lng, accuracy formattati (es. 4 decimali)
-// Usa Card di shadcn
-
+//
 import type { Coords, NominatimResponse } from "@/types";
 
 export function PlaceDisplay({ coords, place }: { coords: Coords; place: NominatimResponse | null }) {

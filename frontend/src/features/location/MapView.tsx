@@ -8,14 +8,12 @@ import { TileLayer } from "react-leaflet/TileLayer";
 // Props: { coords: Coords }
 // MapContainer di React Leaflet centrato su coords
 // Marker sulla posizione
-// Dimensione fissa o fluid via className
-// Importa leaflet/dist/leaflet.css
 
 export function MapView({ coords }: { coords: Coords }) {
     return (
         <div>
             {coords && (
-                <MapContainer center={[coords.lat, coords.lon]} zoom={16} scrollWheelZoom={false} style={{ width: '100%', height: '70vh' }}>
+                <MapContainer center={[coords.lat, coords.lon]} zoom={16} scrollWheelZoom={false} style={{ width: '100%', height: '70vh' }} className="rounded-3xl">
                     <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

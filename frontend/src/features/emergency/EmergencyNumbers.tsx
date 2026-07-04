@@ -20,7 +20,7 @@ export function EmergencyNumbers({ countryCode }: { countryCode: string }) {
             )}
             <div className="flex flex-col gap-4">
                 {primaryNumber && (
-                    <EmergencyCard number={primaryNumber} className="w-full mb-4" />
+                    <EmergencyCard number={primaryNumber} className="w-full" />
                 )}
 
                 {secondaryNumbers && secondaryNumbers.length > 0 && (

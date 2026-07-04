@@ -180,3 +180,12 @@
 .animate-spin-map {
   animation: spin-custom 1000ms linear infinite;
 }
+
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 9 !important;
+}
+
+.leaflet-pane {
+  z-index: 8 !important;
+}
