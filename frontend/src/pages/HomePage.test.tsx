@@ -47,6 +47,7 @@ describe('HomePage', () => {
             error: null,
             start,
             reset,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } as any)
         mockedUseReverseGeocode.mockReturnValue(null)
 

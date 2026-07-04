@@ -5,7 +5,6 @@
 
 import type { Coords, Status } from '@/types'
 import { useCallback, useEffect, useState } from 'react'
-import { MOCK_COORDS_MILANO, MOCK_COORDS_NEW_YORK } from './mocks/coords'
 
 interface GeoLocationState {
     coords: Coords | null
