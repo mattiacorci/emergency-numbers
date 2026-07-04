@@ -1,0 +1,27 @@
+// src/i18n/index.ts
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+
+import it from './locales/it.json';
+import en from './locales/en.json';
+import de from './locales/de.json';
+
+i18n
+    .use(LanguageDetector)
+    .use(initReactI18next)
+    .init({
+        resources: {
+            it: { translation: it },
+            en: { translation: en },
+            de: { translation: de },
+        },
+        fallbackLng: 'en',
+        interpolation: { escapeValue: false }, // React già fa escaping
+        detection: {
+            order: ['localStorage', 'navigator', 'htmlTag'],
+            caches: ['localStorage'],
+        },
+    });
+
+export default i18n;

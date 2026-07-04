@@ -14,9 +14,13 @@ import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
 import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyTitle } from "@/components/ui/empty";
 import { EmergencyNumbers } from "@/features/emergency/EmergencyNumbers";
+// import { useTranslation } from "react-i18next";
 
 
 export function HomePage() {
+
+    // const { t, i18n } = useTranslation();
+
     const { coords, status, start, reset } = useGeolocation();
     const place = useReverseGeocode(coords);
 
@@ -24,7 +28,7 @@ export function HomePage() {
 
     return (
         <div className="max-w-2xl mx-auto flex flex-col gap-8 py-4">
-            {/* <StatusBanner /> */}
+            {/* {t("foo")} */}
 
             {(status === 'idle' || status === 'loading') && (
                 <div className="flex flex-col gap-12">
@@ -54,7 +58,11 @@ export function HomePage() {
                         <p className="text-sm text-neutral-600">This app is a personal project and the author of this app declines any responsibility for the accuracy of the information provided and any reliance on such information.</p>
                         <p className="text-sm font-semibold text-neutral-600">Be aware that if you call an emergency number without a valid reason, you may be charged by the authority.</p>
                     </div>
+                    {/* <Button onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'it' : 'en')}>
+                        {t("common.changeLanguage")}
+                    </Button> */}
                 </div>
+
 
             )}
 
