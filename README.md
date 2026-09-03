@@ -6,6 +6,7 @@ The app detects your current location, resolves it to an administrative region, 
 
 **Live demo:** [emergency-numbers.vercel.app](https://emergency-numbers.vercel.app)
 
+**Swagger Docs:** [Swagger](https://emergency-numbers.onrender.com/api/docs/)
 ## How it works
 
 1. The frontend requests the browser's geolocation.
