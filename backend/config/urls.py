@@ -14,6 +14,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import os
+
 from django.contrib import admin
 from django.urls import include, path
 
@@ -29,3 +31,8 @@ urlpatterns = [
     path("api/docs/", SpectacularSwaggerView.as_view(url_name="schema")),
 ]
 
+if os.environ.get('SWAGGER_ENABLED', 'False') == 'True':
+    urlpatterns += [
+        path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+        path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    ]
