@@ -47,7 +47,7 @@ export function EmergencyCard({ number, className }: { number: EmergencyNumber, 
     <>
       <Drawer showSwipeHandle={isMobile} swipeDirection={isMobile ? "down" : "right"}>
         <DrawerTrigger render={
-          <Button size={null} className={`p-6 rounded-3l text-left rounded-3xl outline-none focus:border-blue-600 focus:outline-2 flex-col items-start ${colorsClasses} ${className || ''}`}>
+          <Button size={null} className={`w-full p-6 rounded-3l text-left rounded-3xl outline-none focus:border-blue-600 focus:outline-2 flex-col items-start ${colorsClasses} ${className || ''}`}>
             <h3 className="text-base">{operatorLabel}</h3>
             <p className="text-4xl">
               {number.number}
@@ -63,6 +63,10 @@ export function EmergencyCard({ number, className }: { number: EmergencyNumber, 
               {t(callInfoKey)}
             </p>
 
+            <p className="text-base font-semibold text-amber-700">
+              {t('emergency.testNotice')}
+            </p>
+
             <p>
               {t('emergency.beReady')}
             </p>
@@ -74,7 +78,7 @@ export function EmergencyCard({ number, className }: { number: EmergencyNumber, 
 
 
           <DrawerFooter>
-            <HoldToConfirmButton label={t('emergency.callNumber', { number: number.number })} holdDurationMs={3000} onConfirm={() => window.open(`tel:0123456789${number.number}`, "_blank", "noopener,noreferrer")} holdingLabel={t('emergency.holdFor3Seconds')}>
+            <HoldToConfirmButton label={t('emergency.callNumber', { number: number.number })} holdDurationMs={3000} onConfirm={() => window.open(`tel:+393470000${number.number}`, "_blank", "noopener,noreferrer")} holdingLabel={t('emergency.holdFor3Seconds')}>
             </HoldToConfirmButton>
             <DrawerClose render={<Button size="lg" variant="outline" />}>{t('common.cancel')}</DrawerClose>
           </DrawerFooter>

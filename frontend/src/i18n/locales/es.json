@@ -50,6 +50,7 @@
         "policeCallInfo": "Usa este número para denunciar un delito, solicitar ayuda policial, avisar de un peligro inminente o cualquier situación que requiera presencia policial inmediata.",
         "fireCallInfo": "Usa este número para incendios, explosiones, materiales peligrosos, rescates o cualquier emergencia en la que sea necesario el servicio de bomberos.",
         "medicalCallInfo": "Usa este número para emergencias médicas, enfermedades repentinas, accidentes, lesiones graves o cualquier situación que requiera atención sanitaria inmediata.",
+        "testNotice": "Este es un sitio web de prueba. Al pulsar Llamar no se realizará una llamada real.",
         "types": {
             "primary": "Servicios de emergencia",
             "general": "Servicios generales de emergencia",

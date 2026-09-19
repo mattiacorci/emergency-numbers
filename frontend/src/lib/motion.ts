@@ -9,6 +9,15 @@ export const fadeUp: Variants = {
   },
 };
 
+export const fadeUpSlow: Variants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 2, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
 export const stagger: Variants = {
   hidden: {},
   visible: {
@@ -21,7 +30,7 @@ export const afterTitle: Variants = {
   visible: {
     transition: {
       delayChildren: 2,
-      staggerChildren: 0.5,
+      staggerChildren: 0.75,
     },
   },
 };

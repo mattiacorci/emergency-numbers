@@ -18,7 +18,7 @@ import { useBackendStatus } from "@/hooks/useBackendStatus";
 import { useTranslation } from "react-i18next";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { afterTitle, fadeUp, mainSequence, stagger } from "@/lib/motion";
+import { afterTitle, fadeUp, fadeUpSlow, mainSequence, stagger } from "@/lib/motion";
 
 export function HomePage() {
 
@@ -90,14 +90,13 @@ export function HomePage() {
                         </motion.div>
                         <motion.div variants={afterTitle} className="w-full flex justify-center flex flex-col gap-12">
                             <Empty>
-                                <motion.div variants={fadeUp}>
+                                <motion.div variants={fadeUpSlow}>
                                     <EmptyDescription>
                                         {t('home.locationPrompt')}
                                     </EmptyDescription>
                                 </motion.div>
-                                <motion.div variants={fadeUp}>
-
-                                    <EmptyContent className="flex-row justify-center gap-2">
+                                <motion.div variants={fadeUpSlow} className="w-full">
+                                    <EmptyContent className="flex-row justify-center gap-2 max-w-full">
                                         {status === 'idle' && (
                                             <Button size="lg" onClick={start} className="w-full">
                                                 {t('home.getLocation')}
@@ -113,7 +112,7 @@ export function HomePage() {
                                 </motion.div>
                             </Empty>
 
-                            <motion.div variants={fadeUp} className="flex flex-col gap-4">
+                            <motion.div variants={fadeUpSlow} className="flex flex-col gap-4">
                                 <p className="text-sm text-neutral-600">{t('home.disclaimerLocation')}</p>
                                 <p className="text-sm text-neutral-600">{t('home.disclaimerProject')}</p>
                                 <p className="text-sm font-semibold text-neutral-600">{t('home.disclaimerWarning')}</p>

@@ -50,6 +50,7 @@
         "policeCallInfo": "Nutze diese Nummer für die Meldung von Vergehen, polizeiliche Hilfe, unmittelbare Gefahr oder Situationen, die sofortiges polizeiliches Eingreifen erfordern.",
         "fireCallInfo": "Nutze diese Nummer bei Bränden, Explosionen, Gefahrstoffen, Rettungseinsätzen oder Situationen, in denen die Feuerwehr benötigt wird.",
         "medicalCallInfo": "Nutze diese Nummer bei medizinischen Notfällen, plötzlichen Erkrankungen, Unfällen, schweren Verletzungen oder Situationen, die sofortige medizinische Hilfe erfordern.",
+        "testNotice": "Dies ist eine Test-Website. Durch Drücken auf Anrufen wird kein echter Anruf gestartet.",
         "types": {
             "primary": "Notfalldienste",
             "general": "Allgemeine Notfalldienste",

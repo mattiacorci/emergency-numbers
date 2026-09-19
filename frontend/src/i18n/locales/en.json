@@ -50,6 +50,7 @@
         "policeCallInfo": "Use this number to report a crime, request police assistance, report an imminent danger, or any situation requiring immediate police presence.",
         "fireCallInfo": "Use this number for fires, explosions, hazardous materials, rescue situations, or any emergency where the fire service is needed.",
         "medicalCallInfo": "Use this number for medical emergencies, sudden illness, accidents, serious injuries, or any situation requiring immediate healthcare support.",
+        "testNotice": "This is a test website. Pressing Call will not place a real call.",
         "types": {
             "primary": "Emergency services",
             "general": "General emergency services",
