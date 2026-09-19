@@ -46,7 +46,7 @@ export function HoldToConfirmButton({
     };
 
     const startAnimationFn = () => {
-        if (disabled) return;
+        if (disabled || startRef.current !== null) return;
 
         setIsHolding(true);
         setProgress(0);
@@ -69,6 +69,20 @@ export function HoldToConfirmButton({
         }, 16); // ~60 FPS
     };
 
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+        if ((event.key === "Enter" || event.key === " ") && !event.repeat) {
+            event.preventDefault();
+            startAnimationFn();
+        }
+    };
+
+    const handleKeyUp = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            stopAnimationFn();
+        }
+    };
+
 
 
     return (
@@ -77,6 +91,9 @@ export function HoldToConfirmButton({
             onPointerUp={stopAnimationFn}
             onPointerLeave={stopAnimationFn}
             onPointerCancel={stopAnimationFn}
+            onKeyDown={handleKeyDown}
+            onKeyUp={handleKeyUp}
+            onBlur={stopAnimationFn}
             size="lg"
             disabled={disabled}
             className={`relative overflow-hidden ${className}`}

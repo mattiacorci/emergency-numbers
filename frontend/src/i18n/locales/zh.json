@@ -1,5 +1,8 @@
 {
     "common": {
+        "pageTitle": "紧急电话",
+        "pageDescription": "查找紧急联系电话，并根据当前位置获取清晰、实用的应急帮助信息。",
+        "mainContentLabel": "紧急信息",
         "changeLanguage": "切换语言",
         "cancel": "取消",
         "tryAgain": "重试",
@@ -32,6 +35,8 @@
     },
     "location": {
         "youAreIn": "你在 {{place}}",
+        "youAreHere": "你在这里",
+        "mapLabel": "显示当前位置的地图",
         "latitude": "纬度",
         "longitude": "经度",
         "accuracy": "精度",
@@ -45,6 +50,14 @@
         "policeCallInfo": "在报告犯罪、请求警务协助、发现紧急危险或需要警方立即介入的情况下，请使用此号码。",
         "fireCallInfo": "当发生火灾、爆炸、有害物质事故、救援行动或需要消防服务时，请使用此号码。",
         "medicalCallInfo": "当发生医疗紧急情况、突发疾病、事故、严重受伤或需要立即医疗协助时，请使用此号码。",
+        "types": {
+            "primary": "紧急服务",
+            "general": "综合紧急服务",
+            "police": "警察",
+            "fire": "消防",
+            "medical": "医疗服务",
+            "coast": "海岸警卫队"
+        },
         "beReady": "请做好准备：接线员会询问紧急情况、你所在位置以及涉及多少人。",
         "stayCalm": "保持冷静并清楚表达。",
         "dontHangUp": "除非对方要求，否则不要挂断电话。",

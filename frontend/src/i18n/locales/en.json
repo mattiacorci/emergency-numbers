@@ -1,5 +1,8 @@
 {
     "common": {
+        "pageTitle": "Emergency Numbers",
+        "pageDescription": "Find emergency numbers and get clear, location-based guidance when you need help quickly.",
+        "mainContentLabel": "Emergency information",
         "changeLanguage": "Change Language",
         "cancel": "Cancel",
         "tryAgain": "Try Again",
@@ -32,6 +35,8 @@
     },
     "location": {
         "youAreIn": "You are in {{place}}",
+        "youAreHere": "You are here",
+        "mapLabel": "Map showing your current location",
         "latitude": "Latitude",
         "longitude": "Longitude",
         "accuracy": "Accuracy",
@@ -45,6 +50,14 @@
         "policeCallInfo": "Use this number to report a crime, request police assistance, report an imminent danger, or any situation requiring immediate police presence.",
         "fireCallInfo": "Use this number for fires, explosions, hazardous materials, rescue situations, or any emergency where the fire service is needed.",
         "medicalCallInfo": "Use this number for medical emergencies, sudden illness, accidents, serious injuries, or any situation requiring immediate healthcare support.",
+        "types": {
+            "primary": "Emergency services",
+            "general": "General emergency services",
+            "police": "Police",
+            "fire": "Fire service",
+            "medical": "Medical services",
+            "coast": "Coast guard"
+        },
         "beReady": "Be ready: the operator will ask you what the emergency is, where you are, and how many people are involved.",
         "stayCalm": "Stay calm and speak clearly.",
         "dontHangUp": "Don't hang up unless you're told to.",

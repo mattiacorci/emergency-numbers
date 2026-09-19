@@ -1,5 +1,8 @@
 {
     "common": {
+        "pageTitle": "Números de emergencia",
+        "pageDescription": "Encuentra números de emergencia y obtén orientación clara y útil según tu ubicación.",
+        "mainContentLabel": "Información de emergencia",
         "changeLanguage": "Cambiar idioma",
         "cancel": "Cancelar",
         "tryAgain": "Intentarlo de nuevo",
@@ -32,6 +35,8 @@
     },
     "location": {
         "youAreIn": "Estás en {{place}}",
+        "youAreHere": "Estás aquí",
+        "mapLabel": "Mapa que muestra tu ubicación actual",
         "latitude": "Latitud",
         "longitude": "Longitud",
         "accuracy": "Precisión",
@@ -45,6 +50,14 @@
         "policeCallInfo": "Usa este número para denunciar un delito, solicitar ayuda policial, avisar de un peligro inminente o cualquier situación que requiera presencia policial inmediata.",
         "fireCallInfo": "Usa este número para incendios, explosiones, materiales peligrosos, rescates o cualquier emergencia en la que sea necesario el servicio de bomberos.",
         "medicalCallInfo": "Usa este número para emergencias médicas, enfermedades repentinas, accidentes, lesiones graves o cualquier situación que requiera atención sanitaria inmediata.",
+        "types": {
+            "primary": "Servicios de emergencia",
+            "general": "Servicios generales de emergencia",
+            "police": "Policía",
+            "fire": "Bomberos",
+            "medical": "Servicios médicos",
+            "coast": "Guardia costera"
+        },
         "beReady": "Prepárate: el operador te preguntará cuál es la emergencia, dónde estás y cuántas personas están involucradas.",
         "stayCalm": "Mantén la calma y habla con claridad.",
         "dontHangUp": "No cuelgues a menos que te lo indiquen.",

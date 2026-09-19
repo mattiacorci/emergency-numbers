@@ -35,14 +35,20 @@ export function EmergencyCard({ number, className }: { number: EmergencyNumber, 
       ? 'emergency.policeCallInfo'
       : number.number_type === 'fire'
         ? 'emergency.fireCallInfo'
-        : 'emergency.medicalCallInfo';
+        : number.number_type === 'medical'
+          ? 'emergency.medicalCallInfo'
+          : 'emergency.primaryCallInfo';
+
+  const operatorLabel = number.label || (number.is_primary
+    ? t('emergency.types.primary')
+    : t(`emergency.types.${number.number_type}`));
 
   return (
     <>
       <Drawer showSwipeHandle={isMobile} swipeDirection={isMobile ? "down" : "right"}>
         <DrawerTrigger render={
           <Button size={null} className={`p-6 rounded-3l text-left rounded-3xl outline-none focus:border-blue-600 focus:outline-2 flex-col items-start ${colorsClasses} ${className || ''}`}>
-            <h3 className="text-base">{number.label}</h3>
+            <h3 className="text-base">{operatorLabel}</h3>
             <p className="text-4xl">
               {number.number}
             </p>
@@ -50,7 +56,7 @@ export function EmergencyCard({ number, className }: { number: EmergencyNumber, 
         }></DrawerTrigger>
         <DrawerContent className="max-w-lg">
           <DrawerHeader>
-            <DrawerTitle>{number.label}</DrawerTitle>
+            <DrawerTitle>{operatorLabel}</DrawerTitle>
           </DrawerHeader>
           <div className="p-4 text-xl flex flex-col gap-4">
             <p>

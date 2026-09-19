@@ -1,5 +1,8 @@
 {
     "common": {
+        "pageTitle": "Numéros d'urgence",
+        "pageDescription": "Trouvez les numéros d'urgence et recevez des conseils clairs et adaptés à votre localisation.",
+        "mainContentLabel": "Informations d'urgence",
         "changeLanguage": "Changer de langue",
         "cancel": "Annuler",
         "tryAgain": "Réessayer",
@@ -32,6 +35,8 @@
     },
     "location": {
         "youAreIn": "Vous êtes à {{place}}",
+        "youAreHere": "Vous êtes ici",
+        "mapLabel": "Carte montrant votre position actuelle",
         "latitude": "Latitude",
         "longitude": "Longitude",
         "accuracy": "Précision",
@@ -45,6 +50,14 @@
         "policeCallInfo": "Utilisez ce numéro pour signaler un crime, demander l'intervention de la police, signaler un danger imminent ou une situation nécessitant une présence policière immédiate.",
         "fireCallInfo": "Utilisez ce numéro pour les incendies, explosions, produits dangereux, opérations de secours ou toute situation où les pompiers sont nécessaires.",
         "medicalCallInfo": "Utilisez ce numéro pour les urgences médicales, les maladies soudaines, les accidents, les blessures graves ou toute situation nécessitant une assistance médicale immédiate.",
+        "types": {
+            "primary": "Services d'urgence",
+            "general": "Services d'urgence généraux",
+            "police": "Police",
+            "fire": "Pompiers",
+            "medical": "Services médicaux",
+            "coast": "Garde côtière"
+        },
         "beReady": "Soyez prêt : l'opérateur vous demandera quelle est l'urgence, où vous êtes et combien de personnes sont impliquées.",
         "stayCalm": "Restez calme et parlez clairement.",
         "dontHangUp": "Ne raccrochez pas tant qu'on ne vous le dit pas.",

@@ -1,5 +1,8 @@
 {
     "common": {
+        "pageTitle": "緊急連絡先",
+        "pageDescription": "緊急連絡先を見つけ、現在地に基づく明確で有用な案内をすぐに確認できます。",
+        "mainContentLabel": "緊急情報",
         "changeLanguage": "言語を変更",
         "cancel": "キャンセル",
         "tryAgain": "再試行",
@@ -32,6 +35,8 @@
     },
     "location": {
         "youAreIn": "あなたは {{place}} にいます",
+        "youAreHere": "現在地",
+        "mapLabel": "現在地を示す地図",
         "latitude": "緯度",
         "longitude": "経度",
         "accuracy": "精度",
@@ -45,6 +50,14 @@
         "policeCallInfo": "犯罪の通報、警察の支援要請、差し迫った危険の報告、または警察の即時対応が必要な状況では、この番号を使用してください。",
         "fireCallInfo": "火災、爆発、有害物質、救助活動、または消防対応が必要な緊急事態では、この番号を使用してください。",
         "medicalCallInfo": "医療緊急事態、急病、事故、重傷、または即時の医療支援が必要な場合は、この番号を使用してください。",
+        "types": {
+            "primary": "緊急サービス",
+            "general": "一般緊急サービス",
+            "police": "警察",
+            "fire": "消防",
+            "medical": "医療サービス",
+            "coast": "沿岸警備隊"
+        },
         "beReady": "準備してください：オペレーターが緊急事態の内容、現在地、関与人数を確認します。",
         "stayCalm": "落ち着いて、はっきり話してください。",
         "dontHangUp": "指示があるまで電話を切らないでください。",

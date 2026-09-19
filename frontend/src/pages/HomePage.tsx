@@ -31,24 +31,28 @@ export function HomePage() {
     return (
         <>
             {(serverStatus == 'checking' || serverStatus == 'waking') && (
-                <Empty>
-                    <EmptyHeader>
-                        <EmptyTitle>{t('home.serverWaking')}</EmptyTitle>
-                    </EmptyHeader>
-                    <EmptyDescription>
-                        {t('home.waitASecond')}
-                    </EmptyDescription>
-                </Empty>
+                <div role="status" aria-live="polite" aria-atomic="true">
+                    <Empty>
+                        <EmptyHeader>
+                            <EmptyTitle as="h1">{t('home.serverWaking')}</EmptyTitle>
+                        </EmptyHeader>
+                        <EmptyDescription>
+                            {t('home.waitASecond')}
+                        </EmptyDescription>
+                    </Empty>
+                </div>
             )}
             {serverStatus == 'unreachable' && (
-                <Empty>
-                    <EmptyHeader>
-                        <EmptyTitle>{t('home.serverUnavailableTitle')}</EmptyTitle>
-                        <EmptyDescription>
-                            {t('home.serverUnavailableMessage')}
-                        </EmptyDescription>
-                    </EmptyHeader>
-                </Empty>
+                <div role="status" aria-live="polite" aria-atomic="true">
+                    <Empty>
+                        <EmptyHeader>
+                            <EmptyTitle as="h1">{t('home.serverUnavailableTitle')}</EmptyTitle>
+                            <EmptyDescription>
+                                {t('home.serverUnavailableMessage')}
+                            </EmptyDescription>
+                        </EmptyHeader>
+                    </Empty>
+                </div>
             )}
 
             {(serverStatus == 'ready' && (status == 'idle' || status === 'loading')) && (
@@ -56,7 +60,7 @@ export function HomePage() {
                     <div className="flex flex-col gap-12">
                         <Empty>
                             <EmptyHeader>
-                                <EmptyTitle>{t('home.startBreath')}</EmptyTitle>
+                                <EmptyTitle as="h1">{t('home.startBreath')}</EmptyTitle>
                                 <EmptyDescription>
                                     {t('home.locationPrompt')}
                                 </EmptyDescription>
@@ -69,7 +73,7 @@ export function HomePage() {
                                 )}
                                 {status === 'loading' && (
                                     <Button size="lg" disabled className="w-full">
-                                        <Spinner data-icon="inline-start" />
+                                        <Spinner aria-label={t('home.gettingLocation')} data-icon="inline-start" />
                                         {t('home.gettingLocation')}
                                     </Button>
                                 )}
@@ -90,7 +94,7 @@ export function HomePage() {
                 <div className="max-w-2xl mx-auto flex flex-col gap-8 py-4">
                     <Empty>
                         <EmptyHeader>
-                            <EmptyTitle>{t('home.locationNotActive')}</EmptyTitle>
+                            <EmptyTitle as="h1">{t('home.locationNotActive')}</EmptyTitle>
                             <EmptyDescription>
                                 {t('home.locationNotActiveDescription')}
                             </EmptyDescription>

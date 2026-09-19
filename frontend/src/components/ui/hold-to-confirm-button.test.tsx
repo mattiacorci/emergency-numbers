@@ -91,4 +91,23 @@ describe('HoldToConfirmButton', () => {
 
         expect(onConfirm).toHaveBeenCalledTimes(1)
     })
+
+    it('Should support holding Enter from the keyboard', () => {
+        const onConfirm = vi.fn()
+
+        render(
+            <HoldToConfirmButton label="Call now" holdingLabel="Hold" holdDurationMs={3000} onConfirm={onConfirm} />
+        )
+
+        const button = screen.getByRole('button', { name: /call now/i })
+
+        fireEvent.keyDown(button, { key: 'Enter' })
+        act(() => {
+            now += 3000
+            vi.advanceTimersByTime(16)
+        })
+        fireEvent.keyUp(button, { key: 'Enter' })
+
+        expect(onConfirm).toHaveBeenCalledTimes(1)
+    })
 })

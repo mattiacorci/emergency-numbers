@@ -1,5 +1,8 @@
 {
     "common": {
+        "pageTitle": "Notrufnummern",
+        "pageDescription": "Finde Notrufnummern und erhalte klare, standortbezogene Hinweise bei schnell benötigter Hilfe.",
+        "mainContentLabel": "Notfallinformationen",
         "changeLanguage": "Sprache ändern",
         "cancel": "Abbrechen",
         "tryAgain": "Erneut versuchen",
@@ -32,6 +35,8 @@
     },
     "location": {
         "youAreIn": "Du bist in {{place}}",
+        "youAreHere": "Du bist hier",
+        "mapLabel": "Karte mit deinem aktuellen Standort",
         "latitude": "Breitengrad",
         "longitude": "Längengrad",
         "accuracy": "Genauigkeit",
@@ -45,6 +50,14 @@
         "policeCallInfo": "Nutze diese Nummer für die Meldung von Vergehen, polizeiliche Hilfe, unmittelbare Gefahr oder Situationen, die sofortiges polizeiliches Eingreifen erfordern.",
         "fireCallInfo": "Nutze diese Nummer bei Bränden, Explosionen, Gefahrstoffen, Rettungseinsätzen oder Situationen, in denen die Feuerwehr benötigt wird.",
         "medicalCallInfo": "Nutze diese Nummer bei medizinischen Notfällen, plötzlichen Erkrankungen, Unfällen, schweren Verletzungen oder Situationen, die sofortige medizinische Hilfe erfordern.",
+        "types": {
+            "primary": "Notfalldienste",
+            "general": "Allgemeine Notfalldienste",
+            "police": "Polizei",
+            "fire": "Feuerwehr",
+            "medical": "Medizinische Dienste",
+            "coast": "Küstenwache"
+        },
         "beReady": "Sei bereit: Der Betreiber wird dich fragen, was der Notfall ist, wo du bist und wie viele Menschen beteiligt sind.",
         "stayCalm": "Bleib ruhig und sprich deutlich.",
         "dontHangUp": "Leg nicht auf, bis dir gesagt wird, dass du es tun sollst.",
