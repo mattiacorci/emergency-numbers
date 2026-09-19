@@ -5,6 +5,7 @@
 
 import type { Coords, Status } from '@/types'
 import { useCallback, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 interface GeoLocationState {
     coords: Coords | null
@@ -15,6 +16,7 @@ interface GeoLocationState {
 
 
 export function useGeolocation(): GeoLocationState & { start: () => void, reset: () => void } {
+    const { t } = useTranslation();
 
     const [state, setState] = useState<GeoLocationState>({
         coords: null,
@@ -37,7 +39,7 @@ export function useGeolocation(): GeoLocationState & { start: () => void, reset:
             setState({
                 coords: null,
                 status: 'error',
-                error: 'Geolocation is not supported.',
+                error: t('geolocation.unsupported'),
                 errorCode: null,
             });
             return;
@@ -58,14 +60,14 @@ export function useGeolocation(): GeoLocationState & { start: () => void, reset:
             },
             (error) => {
                 const messages: Record<number, string> = {
-                    1: 'Geolocation permission denied',
-                    2: 'Position not available',
-                    3: 'Timeout in position request',
+                    1: t('geolocation.permissionDenied'),
+                    2: t('geolocation.positionUnavailable'),
+                    3: t('geolocation.timeout'),
                 }
                 setState({
                     coords: null,
                     status: 'error',
-                    error: messages[error.code] ?? 'Unknown error',
+                    error: messages[error.code] ?? t('geolocation.unknown'),
                 })
             }, {
             enableHighAccuracy: true,

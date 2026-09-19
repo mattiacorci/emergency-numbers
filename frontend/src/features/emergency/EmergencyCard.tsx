@@ -9,7 +9,7 @@ import { HoldToConfirmButton } from "@/components/ui/hold-to-confirm-button";
 import { useIsMobile } from "@/hooks/use-mobile";
 import type { EmergencyNumber } from "@/types";
 import { CircleCheckBig } from 'lucide-react';
-
+import { useTranslation } from "react-i18next";
 
 
 export function EmergencyCard({ number, className }: { number: EmergencyNumber, className?: string }) {
@@ -27,6 +27,7 @@ export function EmergencyCard({ number, className }: { number: EmergencyNumber, 
   }
 
   const isMobile = useIsMobile();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -45,24 +46,23 @@ export function EmergencyCard({ number, className }: { number: EmergencyNumber, 
           </DrawerHeader>
           <div className="p-4 text-xl flex flex-col gap-4">
             <p>
-
-              You can call the single emergency number for any need. The operator will then direct you to the right service for your case.
+              {t('emergency.callInfo')}
             </p>
 
             <p>
-              Be ready: the operator will ask you what the emergency is, where you are, and how many people are involved.
+              {t('emergency.beReady')}
             </p>
             <ul className="p-4 bg-green-200 rounded-3xl flex flex-col gap-2">
-              <li className="flex gap-2 align-middle"><CircleCheckBig className="text-green-600" /> Stay calm and speak clearly.</li>
-              <li className="flex gap-2 align-middle"><CircleCheckBig className="text-green-600" /> Don't hang up unless you're told to.</li>
+              <li className="flex gap-2 align-middle"><CircleCheckBig className="text-green-600" /> {t('emergency.stayCalm')}</li>
+              <li className="flex gap-2 align-middle"><CircleCheckBig className="text-green-600" /> {t('emergency.dontHangUp')}</li>
             </ul>
           </div>
 
 
           <DrawerFooter>
-            <HoldToConfirmButton label={"Call " + number.number} holdDurationMs={3000} onConfirm={() => window.open(`tel:0123456789${number.number}`, "_blank", "noopener,noreferrer")} holdingLabel="Hold for 3 seconds">
+            <HoldToConfirmButton label={t('emergency.callNumber', { number: number.number })} holdDurationMs={3000} onConfirm={() => window.open(`tel:0123456789${number.number}`, "_blank", "noopener,noreferrer")} holdingLabel={t('emergency.holdFor3Seconds')}>
             </HoldToConfirmButton>
-            <DrawerClose render={<Button size="lg" variant="outline" />}>Cancel</DrawerClose>
+            <DrawerClose render={<Button size="lg" variant="outline" />}>{t('common.cancel')}</DrawerClose>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>

@@ -1,6 +1,58 @@
 {
     "common": {
-        "changeLanguage": "Change Language"
+        "changeLanguage": "Change Language",
+        "cancel": "Cancel",
+        "tryAgain": "Try Again",
+        "languages": {
+            "italian": "Italian (Italiano)",
+            "english": "English (English)",
+            "german": "German (Deutsch)",
+            "french": "French (Français)",
+            "spanish": "Spanish (Español)",
+            "chinese": "Chinese (中文)",
+            "japanese": "Japanese (日本語)",
+            "portuguese": "Portuguese (Português)"
+        }
     },
-    "foo": "I am an example text"
+    "home": {
+        "serverWaking": "Server is waking up...",
+        "waitASecond": "Just hold on some seconds.",
+        "serverUnavailableTitle": "Server don't want to get up.",
+        "serverUnavailableMessage": "Please retry later",
+        "startBreath": "Start by taking a deep breath",
+        "locationPrompt": "Now, let me see your location.",
+        "getLocation": "Get Current Location",
+        "gettingLocation": "Getting Current Location...",
+        "disclaimerLocation": "By clicking the button, you will be asked to share your location. We will only use this information to provide you with relevant emergency information.",
+        "disclaimerProject": "This app is a personal project and the author of this app declines any responsibility for the accuracy of the information provided and any reliance on such information.",
+        "disclaimerWarning": "Be aware that if you call an emergency number without a valid reason, you may be charged by the authority.",
+        "locationNotActive": "Location not active",
+        "locationNotActiveDescription": "You need to let me see where you are, otherwise I won't be able to give you the information.",
+        "foundYou": "Ok, found you"
+    },
+    "location": {
+        "youAreIn": "You are in {{place}}",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "accuracy": "Accuracy",
+        "meters": "meters"
+    },
+    "emergency": {
+        "title": "Emergency Numbers",
+        "noNumbers": "No emergency numbers found for this region.",
+        "callInfo": "You can call the single emergency number for any need. The operator will then direct you to the right service for your case.",
+        "beReady": "Be ready: the operator will ask you what the emergency is, where you are, and how many people are involved.",
+        "stayCalm": "Stay calm and speak clearly.",
+        "dontHangUp": "Don't hang up unless you're told to.",
+        "callNumber": "Call {{number}}",
+        "holdFor3Seconds": "Hold for 3 seconds",
+        "keepPressed": "Keep pressed for 3 seconds"
+    },
+    "geolocation": {
+        "permissionDenied": "Geolocation permission denied",
+        "positionUnavailable": "Position not available",
+        "timeout": "Timeout in position request",
+        "unsupported": "Geolocation is not supported.",
+        "unknown": "Unknown error"
+    }
 }

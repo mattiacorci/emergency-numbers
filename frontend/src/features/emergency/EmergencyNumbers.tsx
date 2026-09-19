@@ -3,20 +3,22 @@
 // Renderizza lista di EmergencyCard
 // Gestisce stato loading/error/empty con StatusBanner
 
+import { useTranslation } from "react-i18next";
 import { EmergencyCard } from "./EmergencyCard";
 import { useEmergencyRegion } from "./useEmergencyRegion";
 
 export function EmergencyNumbers({ countryCode }: { countryCode: string }) {
 
+    const { t } = useTranslation();
     const emergencyRegion = useEmergencyRegion(countryCode);
     const primaryNumber = emergencyRegion?.numbers.find(num => num.is_primary);
     const secondaryNumbers = emergencyRegion?.numbers.filter(num => !num.is_primary);
 
     return (
         <div>
-            <h2 className="text-2xl font-bold mb-4">Emergency Numbers</h2>
+            <h2 className="text-2xl font-bold mb-4">{t('emergency.title')}</h2>
             {(!emergencyRegion || emergencyRegion?.numbers.length === 0) && (
-                <p>No emergency numbers found for this region.</p>
+                <p>{t('emergency.noNumbers')}</p>
             )}
             <div className="flex flex-col gap-4">
                 {primaryNumber && (

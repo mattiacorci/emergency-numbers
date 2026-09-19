@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useTranslation } from "react-i18next"
 import { Button } from "./button"
 
 import type { buttonVariants } from "./button"
@@ -19,13 +20,15 @@ type HoldToConfirmButtonProps = React.ComponentProps<typeof Button> &
 
 export function HoldToConfirmButton({
     label,
-    holdingLabel = "Keep pressed for 3 seconds",
+    holdingLabel,
     holdDurationMs = 3000,
     onConfirm,
     className,
     disabled,
     ...props
 }: HoldToConfirmButtonProps) {
+    const { t } = useTranslation();
+    const resolvedHoldingLabel = holdingLabel ?? t('emergency.keepPressed');
     const [progress, setProgress] = React.useState(0);
     const [isHolding, setIsHolding] = React.useState(false);
 
@@ -80,7 +83,7 @@ export function HoldToConfirmButton({
             {...props}
         >
             <span className="absolute inset-0 bg-black/50" style={{ width: `${progress}%` }} />
-            <span className="relative z-10">{isHolding ? holdingLabel : label}</span>
+            <span className="relative z-10">{isHolding ? resolvedHoldingLabel : label}</span>
         </Button>
     )
 }

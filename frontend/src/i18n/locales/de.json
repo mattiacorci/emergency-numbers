@@ -1,6 +1,58 @@
 {
     "common": {
-        "changeLanguage": "Sprache ändern"
+        "changeLanguage": "Sprache ändern",
+        "cancel": "Abbrechen",
+        "tryAgain": "Erneut versuchen",
+        "languages": {
+            "italian": "Italienisch (Italian)",
+            "english": "Englisch (English)",
+            "german": "Deutsch (German)",
+            "french": "Französisch (French)",
+            "spanish": "Spanisch (Español)",
+            "chinese": "Chinesisch (中文)",
+            "japanese": "Japanisch (日本語)",
+            "portuguese": "Portugiesisch (Português)"
+        }
     },
-    "foo": "Ich bin ein Beispieltext"
+    "home": {
+        "serverWaking": "Der Server erwacht gerade...",
+        "waitASecond": "Bitte warte ein paar Sekunden.",
+        "serverUnavailableTitle": "Der Server will nicht aufwachen.",
+        "serverUnavailableMessage": "Bitte versuche es später erneut",
+        "startBreath": "Beginne mit einem tiefen Atemzug",
+        "locationPrompt": "Lass mich jetzt sehen, wo du bist.",
+        "getLocation": "Aktuellen Standort abrufen",
+        "gettingLocation": "Aktuellen Standort wird abgerufen...",
+        "disclaimerLocation": "Wenn du auf die Schaltfläche klickst, wirst du gebeten, deinen Standort zu teilen. Wir verwenden diese Informationen nur, um dir relevante Notfallinformationen bereitzustellen.",
+        "disclaimerProject": "Diese App ist ein persönliches Projekt. Der Autor übernimmt keine Verantwortung für die Richtigkeit der bereitgestellten Informationen und für etwaige Verlass auf diese Informationen.",
+        "disclaimerWarning": "Bitte beachte: Wenn du eine Notrufnummer ohne triftigen Grund anrufst, können Gebühren durch die Behörde anfallen.",
+        "locationNotActive": "Standort nicht aktiv",
+        "locationNotActiveDescription": "Du musst mir erlauben, zu sehen, wo du bist, sonst kann ich dir keine Informationen geben.",
+        "foundYou": "Okay, ich habe dich gefunden"
+    },
+    "location": {
+        "youAreIn": "Du bist in {{place}}",
+        "latitude": "Breitengrad",
+        "longitude": "Längengrad",
+        "accuracy": "Genauigkeit",
+        "meters": "Meter"
+    },
+    "emergency": {
+        "title": "Notrufnummern",
+        "noNumbers": "Für diese Region wurden keine Notrufnummern gefunden.",
+        "callInfo": "Du kannst die einzelne Notrufnummer für jeden Bedarf anrufen. Der Operator leitet dich dann zur richtigen Dienststelle für deinen Fall.",
+        "beReady": "Sei bereit: Der Betreiber wird dich fragen, was der Notfall ist, wo du bist und wie viele Menschen beteiligt sind.",
+        "stayCalm": "Bleib ruhig und sprich deutlich.",
+        "dontHangUp": "Leg nicht auf, bis dir gesagt wird, dass du es tun sollst.",
+        "callNumber": "Rufe {{number}} an",
+        "holdFor3Seconds": "Für 3 Sekunden gedrückt halten",
+        "keepPressed": "Gedrückt halten für 3 Sekunden"
+    },
+    "geolocation": {
+        "permissionDenied": "Zugriff auf den Standort wurde verweigert",
+        "positionUnavailable": "Standort nicht verfügbar",
+        "timeout": "Zeitüberschreitung bei der Standortanfrage",
+        "unsupported": "Standortdienste werden nicht unterstützt.",
+        "unknown": "Unbekannter Fehler"
+    }
 }

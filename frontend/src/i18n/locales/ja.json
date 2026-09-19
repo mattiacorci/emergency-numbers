@@ -1,0 +1,58 @@
+{
+    "common": {
+        "changeLanguage": "言語を変更",
+        "cancel": "キャンセル",
+        "tryAgain": "再試行",
+        "languages": {
+            "italian": "イタリア語 (Italian)",
+            "english": "英語 (English)",
+            "german": "ドイツ語 (Deutsch)",
+            "french": "フランス語 (French)",
+            "spanish": "スペイン語 (Español)",
+            "chinese": "中国語 (中文)",
+            "japanese": "日本語 (日本語)",
+            "portuguese": "ポルトガル語 (Português)"
+        }
+    },
+    "home": {
+        "serverWaking": "サーバーが起動しています...",
+        "waitASecond": "少しお待ちください。",
+        "serverUnavailableTitle": "サーバーが起動しません。",
+        "serverUnavailableMessage": "後でもう一度お試しください",
+        "startBreath": "まず深呼吸をしてください",
+        "locationPrompt": "今、あなたの位置を確認します。",
+        "getLocation": "現在地を取得",
+        "gettingLocation": "現在地を取得しています...",
+        "disclaimerLocation": "ボタンを押すと、位置情報の共有が求められます。これらの情報は関連する緊急情報の提供にのみ使用します。",
+        "disclaimerProject": "このアプリは個人プロジェクトであり、提供された情報の正確性やその依存に関する責任は作者が一切負いません。",
+        "disclaimerWarning": "正当な理由なく緊急通報番号に電話すると、当局によって料金が発生する場合があります。",
+        "locationNotActive": "位置情報が無効です",
+        "locationNotActiveDescription": "あなたの場所を確認する許可が必要です。許可しないと情報を提供できません。",
+        "foundYou": "OK、見つかりました"
+    },
+    "location": {
+        "youAreIn": "あなたは {{place}} にいます",
+        "latitude": "緯度",
+        "longitude": "経度",
+        "accuracy": "精度",
+        "meters": "メートル"
+    },
+    "emergency": {
+        "title": "緊急連絡先",
+        "noNumbers": "この地域の緊急連絡先は見つかりませんでした。",
+        "callInfo": "どんな場合でも、この緊急番号に電話できます。オペレーターがあなたのケースに合った適切な窓口に案内します。",
+        "beReady": "準備してください：オペレーターが緊急事態の内容、現在地、関与人数を確認します。",
+        "stayCalm": "落ち着いて、はっきり話してください。",
+        "dontHangUp": "指示があるまで電話を切らないでください。",
+        "callNumber": "{{number}} に電話",
+        "holdFor3Seconds": "3秒間押し続ける",
+        "keepPressed": "3秒間押し続けてください"
+    },
+    "geolocation": {
+        "permissionDenied": "位置情報の許可が拒否されました",
+        "positionUnavailable": "現在地を取得できません",
+        "timeout": "位置情報の取得がタイムアウトしました",
+        "unsupported": "位置情報はサポートされていません。",
+        "unknown": "不明なエラー"
+    }
+}

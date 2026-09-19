@@ -4,6 +4,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { HomePage } from './HomePage'
 import { useGeolocation } from '@/features/location/useGeolocation'
 import { useReverseGeocode } from '@/features/location/useReverseGeocode'
+import { useBackendStatus } from '@/hooks/useBackendStatus'
 
 vi.mock('@/features/location/useGeolocation', () => ({
     useGeolocation: vi.fn(),
@@ -11,6 +12,10 @@ vi.mock('@/features/location/useGeolocation', () => ({
 
 vi.mock('@/features/location/useReverseGeocode', () => ({
     useReverseGeocode: vi.fn(),
+}))
+
+vi.mock('@/hooks/useBackendStatus', () => ({
+    useBackendStatus: vi.fn(),
 }))
 
 vi.mock('@/features/location/PlaceDisplay', () => ({
@@ -31,6 +36,7 @@ vi.mock('@/features/emergency/EmergencyNumbers', () => ({
 
 const mockedUseGeolocation = vi.mocked(useGeolocation)
 const mockedUseReverseGeocode = vi.mocked(useReverseGeocode)
+const mockedUseBackendStatus = vi.mocked(useBackendStatus)
 
 describe('HomePage', () => {
     beforeEach(() => {
@@ -50,6 +56,7 @@ describe('HomePage', () => {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } as any)
         mockedUseReverseGeocode.mockReturnValue(null)
+        mockedUseBackendStatus.mockReturnValue('ready')
 
         const user = userEvent.setup()
         render(<HomePage />)
@@ -79,6 +86,7 @@ describe('HomePage', () => {
             address: { 'ISO3166-2-lvl6': 'IT-25' },
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } as any)
+        mockedUseBackendStatus.mockReturnValue('ready')
 
         render(<HomePage />)
 

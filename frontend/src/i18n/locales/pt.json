@@ -1,0 +1,58 @@
+{
+    "common": {
+        "changeLanguage": "Alterar idioma",
+        "cancel": "Cancelar",
+        "tryAgain": "Tentar novamente",
+        "languages": {
+            "italian": "Italiano (Italian)",
+            "english": "Inglês (English)",
+            "german": "Alemão (Deutsch)",
+            "french": "Francês (French)",
+            "spanish": "Espanhol (Español)",
+            "chinese": "Chinês (中文)",
+            "japanese": "Japonês (日本語)",
+            "portuguese": "Português (Português)"
+        }
+    },
+    "home": {
+        "serverWaking": "O servidor está acordando...",
+        "waitASecond": "Aguarde alguns segundos.",
+        "serverUnavailableTitle": "O servidor não quer levantar.",
+        "serverUnavailableMessage": "Tente novamente mais tarde",
+        "startBreath": "Comece inspirando fundo",
+        "locationPrompt": "Agora, deixe-me ver a sua localização.",
+        "getLocation": "Obter localização atual",
+        "gettingLocation": "Obtendo localização atual...",
+        "disclaimerLocation": "Ao clicar no botão, será solicitado que compartilhe sua localização. Usaremos essas informações apenas para fornecer informações relevantes de emergência.",
+        "disclaimerProject": "Este aplicativo é um projeto pessoal e o autor se isenta de qualquer responsabilidade pela precisão das informações fornecidas e por qualquer dependência delas.",
+        "disclaimerWarning": "Esteja ciente de que, se você ligar para um número de emergência sem motivo válido, pode haver cobrança por parte da autoridade.",
+        "locationNotActive": "Localização inativa",
+        "locationNotActiveDescription": "Você precisa permitir que eu veja onde você está, caso contrário não poderei fornecer as informações.",
+        "foundYou": "Ok, encontrei você"
+    },
+    "location": {
+        "youAreIn": "Você está em {{place}}",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "accuracy": "Precisão",
+        "meters": "metros"
+    },
+    "emergency": {
+        "title": "Números de emergência",
+        "noNumbers": "Nenhum número de emergência foi encontrado para esta região.",
+        "callInfo": "Você pode ligar para o único número de emergência para qualquer necessidade. O operador o direcionará ao serviço correto para o seu caso.",
+        "beReady": "Prepare-se: o operador perguntará qual é a emergência, onde você está e quantas pessoas estão envolvidas.",
+        "stayCalm": "Mantenha a calma e fale com clareza.",
+        "dontHangUp": "Não desligue a menos que lhe digam para fazer isso.",
+        "callNumber": "Ligar para {{number}}",
+        "holdFor3Seconds": "Segure por 3 segundos",
+        "keepPressed": "Mantenha pressionado por 3 segundos"
+    },
+    "geolocation": {
+        "permissionDenied": "Permissão de geolocalização negada",
+        "positionUnavailable": "Localização indisponível",
+        "timeout": "Tempo limite da solicitação de localização excedido",
+        "unsupported": "Geolocalização não suportada.",
+        "unknown": "Erro desconhecido"
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "common": {
+        "changeLanguage": "Changer de langue",
+        "cancel": "Annuler",
+        "tryAgain": "Réessayer",
+        "languages": {
+            "italian": "Italien (Italian)",
+            "english": "Anglais (English)",
+            "german": "Allemand (Deutsch)",
+            "french": "Français (French)",
+            "spanish": "Espagnol (Español)",
+            "chinese": "Chinois (中文)",
+            "japanese": "Japonais (日本語)",
+            "portuguese": "Portugais (Português)"
+        }
+    },
+    "home": {
+        "serverWaking": "Le serveur se réveille...",
+        "waitASecond": "Patientez quelques secondes.",
+        "serverUnavailableTitle": "Le serveur ne veut pas se réveiller.",
+        "serverUnavailableMessage": "Veuillez réessayer plus tard",
+        "startBreath": "Commencez par prendre une grande respiration",
+        "locationPrompt": "Maintenant, laissez-moi voir où vous êtes.",
+        "getLocation": "Obtenir la position actuelle",
+        "gettingLocation": "Récupération de la position actuelle...",
+        "disclaimerLocation": "En cliquant sur le bouton, on vous demandera de partager votre position. Nous n'utiliserons ces informations que pour vous fournir des informations d'urgence pertinentes.",
+        "disclaimerProject": "Cette application est un projet personnel et l'auteur décline toute responsabilité quant à l'exactitude des informations fournies et à toute utilisation qui pourrait en être faite.",
+        "disclaimerWarning": "Attention : si vous appelez un numéro d'urgence sans raison valable, des frais peuvent être facturés par l'autorité.",
+        "locationNotActive": "Position désactivée",
+        "locationNotActiveDescription": "Vous devez me permettre de voir où vous êtes, sinon je ne pourrai pas vous donner les informations nécessaires.",
+        "foundYou": "OK, je vous ai trouvé"
+    },
+    "location": {
+        "youAreIn": "Vous êtes à {{place}}",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "accuracy": "Précision",
+        "meters": "mètres"
+    },
+    "emergency": {
+        "title": "Numéros d'urgence",
+        "noNumbers": "Aucun numéro d'urgence n'a été trouvé pour cette région.",
+        "callInfo": "Vous pouvez appeler le numéro d'urgence unique pour n'importe quel besoin. L'opérateur vous orientera ensuite vers le bon service pour votre cas.",
+        "beReady": "Soyez prêt : l'opérateur vous demandera quelle est l'urgence, où vous êtes et combien de personnes sont impliquées.",
+        "stayCalm": "Restez calme et parlez clairement.",
+        "dontHangUp": "Ne raccrochez pas tant qu'on ne vous le dit pas.",
+        "callNumber": "Appeler {{number}}",
+        "holdFor3Seconds": "Maintenir 3 secondes",
+        "keepPressed": "Maintenez enfoncé pendant 3 secondes"
+    },
+    "geolocation": {
+        "permissionDenied": "Autorisation de géolocalisation refusée",
+        "positionUnavailable": "Position indisponible",
+        "timeout": "Délai de la demande de position dépassé",
+        "unsupported": "La géolocalisation n'est pas prise en charge.",
+        "unknown": "Erreur inconnue"
+    }
+}

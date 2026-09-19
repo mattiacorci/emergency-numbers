@@ -1,0 +1,58 @@
+{
+    "common": {
+        "changeLanguage": "切换语言",
+        "cancel": "取消",
+        "tryAgain": "重试",
+        "languages": {
+            "italian": "意大利语 (Italian)",
+            "english": "英语 (English)",
+            "german": "德语 (Deutsch)",
+            "french": "法语 (French)",
+            "spanish": "西班牙语 (Español)",
+            "chinese": "中文 (中文)",
+            "japanese": "日语 (日本語)",
+            "portuguese": "葡萄牙语 (Português)"
+        }
+    },
+    "home": {
+        "serverWaking": "服务器正在启动...",
+        "waitASecond": "请稍等几秒。",
+        "serverUnavailableTitle": "服务器还没准备好。",
+        "serverUnavailableMessage": "请稍后再试",
+        "startBreath": "先深呼吸一下",
+        "locationPrompt": "现在让我看一下你的位置。",
+        "getLocation": "获取当前位置",
+        "gettingLocation": "正在获取当前位置...",
+        "disclaimerLocation": "点击按钮后，系统会请求你共享当前位置。我们只会使用这些信息来提供相关的紧急信息。",
+        "disclaimerProject": "此应用为个人项目，作者不对提供信息的准确性及依赖这些信息所造成的后果承担任何责任。",
+        "disclaimerWarning": "请注意，如果在没有正当理由的情况下拨打紧急电话，可能会产生相应费用。",
+        "locationNotActive": "位置未启用",
+        "locationNotActiveDescription": "你需要允许我查看你所在的位置，否则我无法提供相关信息。",
+        "foundYou": "好的，我找到你了"
+    },
+    "location": {
+        "youAreIn": "你在 {{place}}",
+        "latitude": "纬度",
+        "longitude": "经度",
+        "accuracy": "精度",
+        "meters": "米"
+    },
+    "emergency": {
+        "title": "紧急号码",
+        "noNumbers": "未找到该地区的紧急号码。",
+        "callInfo": "无论什么情况，你都可以拨打这个紧急号码。接线员会将你转接到最合适的服务。",
+        "beReady": "请做好准备：接线员会询问紧急情况、你所在位置以及涉及多少人。",
+        "stayCalm": "保持冷静并清楚表达。",
+        "dontHangUp": "除非对方要求，否则不要挂断电话。",
+        "callNumber": "拨打 {{number}}",
+        "holdFor3Seconds": "按住 3 秒",
+        "keepPressed": "按住 3 秒"
+    },
+    "geolocation": {
+        "permissionDenied": "已拒绝位置权限",
+        "positionUnavailable": "当前位置不可用",
+        "timeout": "获取位置请求超时",
+        "unsupported": "不支持地理定位。",
+        "unknown": "未知错误"
+    }
+}
