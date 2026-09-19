@@ -41,7 +41,7 @@ export function MapView({ coords }: { coords: Coords }) {
             >
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-                    url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_3qi1_1_9bf1f5b0ce8fa57be0e089e4"
+                    url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_3qi1_1_9bf1f5b0ce8fa57be0e089e0"
                     subdomains="abcd"
                     maxZoom={20}
                 />
