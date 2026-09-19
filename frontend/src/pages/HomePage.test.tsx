@@ -1,6 +1,9 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { waitFor } from '@testing-library/react'
+import App from '@/App'
+import i18n from '@/i18n'
 import { HomePage } from './HomePage'
 import { useGeolocation } from '@/features/location/useGeolocation'
 import { useReverseGeocode } from '@/features/location/useReverseGeocode'
@@ -93,5 +96,40 @@ describe('HomePage', () => {
         expect(screen.getByText(/ok, found you/i)).toBeInTheDocument()
         expect(screen.getByText(/milano, italia - 45.4642/i)).toBeInTheDocument()
         expect(screen.getByText(/emergencynumbers for it-25/i)).toBeInTheDocument()
+    })
+
+    it('updates the document title and metadata when the language changes', async () => {
+        const start = vi.fn()
+        const reset = vi.fn()
+
+        mockedUseGeolocation.mockReturnValue({
+            coords: null,
+            status: 'idle',
+            error: null,
+            start,
+            reset,
+        } as unknown as ReturnType<typeof useGeolocation>)
+        mockedUseReverseGeocode.mockReturnValue(null)
+        mockedUseBackendStatus.mockReturnValue('ready')
+
+        i18n.changeLanguage('en')
+
+        render(<App />)
+
+        await waitFor(() => {
+            expect(document.title).toBe('Emergency Numbers')
+            expect(document.documentElement.lang).toBe('en')
+        })
+
+        i18n.changeLanguage('it')
+
+        await waitFor(() => {
+            expect(document.title).toBe('Numeri di emergenza')
+            expect(document.documentElement.lang).toBe('it')
+            expect(document.querySelector('meta[name="description"]')).toHaveAttribute(
+                'content',
+                'Trova i numeri di emergenza e ricevi indicazioni chiare e aggiornate in base alla tua posizione.'
+            )
+        })
     })
 })
