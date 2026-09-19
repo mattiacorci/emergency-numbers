@@ -77,7 +77,7 @@ export function useGeolocation(): GeoLocationState & { start: () => void, reset:
         );
 
         setWatchId(watchId);
-    }, [])
+    }, [t])
 
     useEffect(() => {
         return () => {
