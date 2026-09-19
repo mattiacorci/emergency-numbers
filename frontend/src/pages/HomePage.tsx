@@ -105,14 +105,14 @@ export function HomePage() {
             )}
 
             {serverStatus == 'ready' && status === 'success' && coords && (
-                <div className="max-w-5xl mx-auto flex flex-col gap-8 py-4">
+                <div className="max-w-6xl mx-auto flex flex-col gap-8 py-4">
                     <div className="flex w-full min-w-0 flex-1 flex-col gap-8">
                         <h1 className="text-5xl/normal lg:text-6xl/normal font-medium">{t('home.foundYou')}</h1>
                         <div className="flex flex-col lg:flex-row gap-12">
-                            <div className="w-full lg:w-1/2 rounded-3xl">
+                            <div className="w-full lg:w-2/3 rounded-3xl">
                                 <MapView coords={coords} />
                             </div>
-                            <div className="w-full lg:w-1/2 flex flex-col gap-8">
+                            <div className="w-full lg:w-1/3 flex flex-col gap-8">
                                 <PlaceDisplay coords={coords} place={place} />
                                 {countryCode && (
                                     <EmergencyNumbers countryCode={countryCode} />

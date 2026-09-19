@@ -29,6 +29,14 @@ export function EmergencyCard({ number, className }: { number: EmergencyNumber, 
   const isMobile = useIsMobile();
   const { t } = useTranslation();
 
+  const callInfoKey = number.is_primary
+    ? 'emergency.primaryCallInfo'
+    : number.number_type === 'police'
+      ? 'emergency.policeCallInfo'
+      : number.number_type === 'fire'
+        ? 'emergency.fireCallInfo'
+        : 'emergency.medicalCallInfo';
+
   return (
     <>
       <Drawer showSwipeHandle={isMobile} swipeDirection={isMobile ? "down" : "right"}>
@@ -40,13 +48,13 @@ export function EmergencyCard({ number, className }: { number: EmergencyNumber, 
             </p>
           </Button>
         }></DrawerTrigger>
-        <DrawerContent className="w-lg max-w-128">
+        <DrawerContent className="max-w-lg">
           <DrawerHeader>
             <DrawerTitle>{number.label}</DrawerTitle>
           </DrawerHeader>
           <div className="p-4 text-xl flex flex-col gap-4">
             <p>
-              {t('emergency.callInfo')}
+              {t(callInfoKey)}
             </p>
 
             <p>

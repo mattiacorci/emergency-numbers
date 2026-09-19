@@ -53,7 +53,7 @@ describe('EmergencyCard', () => {
 
 
 
-    it('Should open the drawer and show the content when clicked', async () => {
+    it('Should open the drawer and show the relevant emergency message based on operator type', async () => {
         const user = userEvent.setup()
         const number: EmergencyNumber = {
             label: 'Polizia',
@@ -66,7 +66,7 @@ describe('EmergencyCard', () => {
 
         await user.click(screen.getByRole('button', { name: /polizia/i }))
 
-        expect(screen.getByText(/you can call the single emergency number/i)).toBeInTheDocument()
+        expect(screen.getByText(/use this number to report a crime/i)).toBeInTheDocument()
         expect(screen.getByRole('heading', { name: /polizia/i })).toBeInTheDocument()
     })
 })
